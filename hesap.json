@@ -1,0 +1,42 @@
+[
+    {
+        "işlem": "para çek",
+        "durum": "gerçekleşti",
+        "bakiye": 955
+    },
+    {
+        "işlem": "para ekle",
+        "durum": "gerçekleşti",
+        "bakiye": 13267
+    },
+    {
+        "işlem": "para çek",
+        "durum": "gerçekleşti",
+        "bakiye": 11703
+    },
+    {
+        "işlem": "para çek",
+        "durum": "gerçekleşti",
+        "bakiye": 7135
+    },
+    {
+        "işlem": "para çek",
+        "durum": "gerçekleşti",
+        "bakiye": 5901
+    },
+    {
+        "işlem": "para çek",
+        "durum": "gerçekleşti",
+        "bakiye": 1066
+    },
+    {
+        "işlem": "para çek",
+        "durum": "gerçekleşti",
+        "bakiye": 0
+    },
+    {
+        "işlem": "para ekle",
+        "durum": "gerçekleşti",
+        "bakiye": 2
+    }
+]
