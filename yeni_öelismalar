@@ -1,0 +1,206 @@
+# class Telfon:
+#     def __init__(self,marka):
+#         self.marka=marka
+#         self.__pil=50
+#     def pili_goster(self):
+#         print(f"pil yuzde %{self.__pil} var")
+#     def şarf_et(self,miktar):
+#         self.__pil+=miktar
+#         if self.__pil >= 100:
+#             self.__pil=100
+#             print(f"%{miktar} eklendi, sarj yuzde %{self.__pil} ")
+#             print("batarya tamamen doldu !!!")
+#         else:
+#             print(f"%{miktar} eklendi, sarj yuzde %{self.__pil} ")
+#     def oyun_oyna(self,tur):
+#         if  tur >6:
+#             print("cok fazla oynadiniz bil tukendi")
+#             self.__pil=0
+#         else:
+#             self.__pil -= tur*20
+#             if self.__pil <= 0:
+#                 self.__pil=0
+#                 print("telefonun şarji bitti !")
+#             elif self.__pil<30:
+#                 print(f"Telefonun şarjı az ve bitmek üzere: %{self.__pil}")
+#             else :
+#                print(f"{tur} tur oyun oynandı. Kalan şarj: %{self.__pil}")
+# bilgi=Telfon("apple")
+# bilgi.pili_goster()
+# bilgi.şarf_et(50)
+# bilgi.oyun_oyna(3)
+#A sdsada !!! **** ???????
+#---------------------------------------------------------------------------------------------------------#
+
+# from abc import ABC, abstractmethod
+
+# class Hayvanlar(ABC):
+
+#     @abstractmethod
+#     def ses_cikar(self):
+#         pass
+# class Dog(Hayvanlar):
+#     def ses_cikar(self):
+#         print("hav hav")
+# class Cat(Hayvanlar):
+#     def ses_cikar(self):
+#         print("miyav miyav")
+# def hepsi(ses:Hayvanlar):
+#     ses.ses_cikar()
+# hepsi(Dog())
+# hepsi(Cat())
+
+
+
+#---------------------------------------------------------------------------------------------------------#
+# SepetElemani adında boş bir sınıf oluştur.
+# __init__ metodunu yazarak dışarıdan urun_adi, adet ve birim_fiyat parametrelerini alıp self ile kaydet.
+# __str__ metodunu ekle ve geriye f-string kullanarak "Ürün Adı - X adet (Adet Fiyatı: Y TL)" formatında bir metin döndür.
+# __repr__ metodunu ekle ve geriye geliştirici için "SepetElemani('Ürün Adı', X)" formatında teknik bir metin döndür.
+# __eq__ metodunu ekle ve iki nesnenin sadece urun_adi öznitelikleri birbirine eşitse True, değilse False döndür.
+# Sınıfın dışına çıkıp test için aynı isimde ama farklı adette iki ürün nesnesi oluştur.
+# Test için tamamen farklı isimde üçüncü bir ürün nesnesi oluştur.İlk nesneyi print() ile yazdırarak __str__ çıktısını kontrol et.
+# Nesneleri bir liste içine koyup listeyi print() ile yazdırarak __repr__ çıktısını kontrol et.
+# İsimleri aynı olan iki nesneyi == ile kıyaslayıp sonucun True gelip gelmediğini kontrol et.
+# İsimleri farklı olan iki nesneyi == ile kıyaslayıp sonucun False gelip gelmediğini kontrol et.   
+
+# class SepetElemani:
+#     def __init__(self,urun_adi,birim_fiyati):
+#         self.urunad=urun_adi
+#         self.fiyat=birim_fiyati
+#     def __str__(self):
+#         return f"{self.urunad} - {self.fiyat} TL"
+#     def __repr__(self):
+#         return f"SepetElemani('{self.urunad}',{self.fiyat})"
+#     def __eq__(self,other):
+#         if isinstance(other,SepetElemani):
+#             return self.urunad==other.urunad
+#         return "eşit değildir"
+# urun_sepeti=SepetElemani("aplle",5000)
+# urun_sepeti1=SepetElemani("aplle",5000)
+# liste=[urun_sepeti,urun_sepeti1]
+# print(urun_sepeti)
+# print(urun_sepeti1)
+# print(urun_sepeti==urun_sepeti1)
+# print(liste)
+
+
+#--------------------------------------------------------------------------
+# Kitap, Üye ve Kütüphane sınıflarını tasarla; ödünç alma/iade etme, gecikme kontrolü gibi davranışları metotlarla modelle. 
+# Kalıtım kullanarak 'DijitalKitap' gibi özel bir tür
+# ekle. Bu proje OOP'nin dört temel prensibini tek bir sistemde uygulatır.
+liste=[]
+class Kitap:
+    def __init__(self,kişiad,kişi_yas):
+        self.kişi_ad=kişiad
+        self.alacigin = "Henüz kitap alınmadı"
+        self.silinen = "Henüz iade edilmedi"
+        self._kişi_yas=kişi_yas
+        self.__kitapAdi="booykor","lezet","erken","deve kucu"
+    def alma(self):
+        print("-----kitapalma-------")
+        alacigin=input(f"almak istediğiniz kiabin adini yaziniz {[self.__kitapAdi]}:")
+        if alacigin in self.__kitapAdi:
+            print("başarıyla alındı.")
+            self.alacigin=alacigin
+            liste.append(alacigin)
+        else:
+            print("boyle bir kitap yok.")
+    def iade_etme(self):
+        print("-----iade etme-------")
+        iade=input(f"iade etmek istediğiniz kiabin adini yaziniz :")
+        if iade in liste:
+            print("başarıyla iade edildi.")
+            self.silinen=iade
+            liste.remove(iade)
+        else:
+            print("boyle bir kitap yok.")
+    def gecikme_kontrolu(self,sure):
+        print("---------------gecikme kontrolu------------------")
+        suren=int(input("kac aydir gecikme var:"))
+        if sure>suren:
+            print("gecikme yok.")
+        else:
+            gecikensure = suren - sure
+            
+            print(f"gecikmişsiniz , {gecikensure} aydan sure tamamlanmıştır.")
+    def hersegi_goster(self):
+        dic={
+            "ad":self.kişi_ad,
+            "yas":self._kişi_yas,
+            "aldign_kitap":self.alacigin,
+            "silinen":self.silinen
+        }
+        liste.append(dic)
+        print(liste)
+uyelistesi=[]
+class Uye(Kitap):
+    def __init__(self,kişiad,kişi_yas):
+        super().__init__(kişiad,kişi_yas)
+        self.uye_ol=False
+        self.uyesilme=False
+        self.name=""
+    def uyeol(self):
+        print("-----uye ol------")
+        ad=input("adınız: ")
+        soyad=input("soyadınız: ")
+        yas=int(input("yasinız: "))
+        hepsi=(ad,soyad,yas)
+        self.name=ad
+        print(f"uye olma isteyen {hepsi} yasında")
+        self.uye_ol="uye eklemek"
+        dic={
+            "ad":ad,
+            "soyad":soyad,
+            "yas":yas}
+        uyelistesi.append(dic)
+        print(uyelistesi)
+        print("işlem tamamlandi\n")
+    def uyesil(self):
+        print("-----uye sil------")
+        silinecek_uye = input("silinecek uye: ")
+        if silinecek_uye == self.name:
+            
+            for uye_dic in uyelistesi:
+                if isinstance(uye_dic, dict) and uye_dic.get("ad") == silinecek_uye:
+                    uyelistesi.remove(uye_dic)
+                    print("uye silindi")
+                    self.uyesilme = "uye silindi"
+                    return
+        else:
+            print("oyle biri uye bulumadik.")  
+    def hersegi_goster(self):
+        dic={
+            "uye ekleme":self.uye_ol,
+            "uye silme":self.uyesilme
+            }
+        print(uyelistesi.append(dic))
+    
+kitaplar_=[]
+class Kutubhane(Kitap):
+
+    def kitaplar_al(self):
+        print("çikmak istediğinde (1) yaziniz okey ??")
+        print("----------kutubhaneye yeni kitaplar ekle ------------")
+        while True:
+            ekle=input("eklemek istediginiz kitabi yaziniz :")
+            if ekle.strip() == "":
+                print("boş birşey giremesiniz.")
+            elif ekle == "1":
+                print(kitaplar_)
+                print("çıkıs yapılıyor...")
+                break
+            else:
+                print("eklendi")
+                kitaplar_.append(ekle)
+kitap=Kitap("ali",20)
+# kitap.alma()
+# kitap.iade_etme()
+# kitap.gecikme_kontrolu(3)
+# kitap.hersegi_goster()
+uye=Uye("ali",20)
+uye.uyeol()
+uye.uyesil()
+uye.hersegi_goster()
+kitaplar=Kutubhane("ali",20)
+kitaplar.kitaplar_al()

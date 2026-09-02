@@ -31,8 +31,13 @@ print("..._ Finans Takip Sistemine Hoş Geldiniz _...")
 
 while True:
     print("\n" + "="*30)
-    islem = input("1-Gelir Ekle\n2-Gider Ekle\n3-Rapor Göster\n4-Çıkış\nSeçiminiz (rakam olarak yazınız): ")
-    print("="*30)
+    while True:
+        try:
+            islem = input("1-Gelir Ekle\n2-Gider Ekle\n3-Rapor Göster\n4-Çıkış\nSeçiminiz (rakam olarak yazınız): ")
+            print("="*30)
+            break
+        except:
+            print("boş yada harf girmeyiniz.")
     
     if islem == "1":
         finans.gelir_ekle()

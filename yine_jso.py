@@ -90,4 +90,3 @@ class EveryWork:
 if __name__ == "__main__":
     app=EveryWork()
     app.tum_içlemler()
-

@@ -1,0 +1,1 @@
+print("ali eko meko siko")

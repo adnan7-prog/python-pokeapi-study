@@ -36,16 +36,16 @@ def kağit():
         return "kazanmak"
     elif yapay ==3:
         print(Fore.LIGHTRED_EX,"makas,kaybettin")
-        liste.append(numper,"kaybetmek__")
+        liste.append("kaybetmek__")
         return "kaybetmek"
     else:      
         print("kağit,berabere")
-        liste.append(numper,"berabere")
+        liste.append("berabere")
         return "berabere"
 def makas():
     if yapay == 2:
         print(Fore.LIGHTGREEN_EX,"kağit,kazandin")
-        liste.append(numper,"kazanmak__")
+        liste.append("kazanmak__")
         global puan
         puan+=arti_puan
         return "kazanmak"
@@ -62,20 +62,20 @@ while tur>=0:
         seç=int(input("1.taş 2.kağit 3.makas: "))
         print("oyuna giriş yapiliyor")
         print(Fore.LIGHTMAGENTA_EX,"Loading...")
-        time.sleep(5)
+        time.sleep(0.5)
     except ValueError:
         print(Fore.LIGHTBLUE_EX,"lütfen bir sayi girin")
         continue
     yapay=random.randint(1,4)
     if seç==1:
         taş_()
-        time.sleep(4)
+        time.sleep(0.5)
     elif seç ==2:
         kağit()
-        time.sleep(4)
+        time.sleep(0.5)
     elif seç == 3:
         makas()
-        time.sleep(4)
+        time.sleep(0.5)
         numper+=1
     else:
         print(f"1-3 arasinda bir sayi giriniz lütfen {seç} değil")
