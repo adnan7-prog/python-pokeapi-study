@@ -85,6 +85,51 @@ def sinirla_ve_goster_limit():
 
 
 
+# def insert_ornek():
+#     """INSERT: Kullanıcıdan alınan verilerle yeni bir yazar ekler.
+
+#     (Daha önce virgül hatası yaptığın yer, burada düzeltildi).
+#     """
+#     yazar_adi = input("Eklenecek yazar adını giriniz: ")
+#     # Yazım hatası olmaması için sonuna virgül ekledik
+#     kitap.execute("INSERT INTO yazarlar (yazar_adi) VALUES(?)", (yazar_adi,))
+#     con.commit()  # Kalıcı olması için commit şart!
+#     print("Yeni yazar başarıyla eklendi.")
+
+
+# def update_ornek():
+#     """UPDATE: İsmi girilen kitabın puanını günceller.
+
+#     Syntax hatası yapmamak için SET ve WHERE kalıpları düzgün kuruldu.
+#     """
+#     hedef_kitap = input("Puanını güncellemek istediğiniz kitabın adı: ")
+#     yeni_puan = int(input("Yeni puanı giriniz (1-10): "))
+
+#     # UPDATE tablo SET sütun = yeni_değer WHERE şart
+#     kitap.execute(
+#         "UPDATE kitaplar SET puan = ? WHERE kitap_adi = ?",
+#         (yeni_puan, hedef_kitap),
+#     )
+#     con.commit()  # Değişikliği kaydet
+#     print(f"'{hedef_kitap}' isimli kitabın puanı {yeni_puan} olarak güncellendi.")
+
+
+# def delete_ornek():
+#     """DELETE: İsmi girilen kitabı tablodan kalıcı olarak siler.
+
+#     Eğer WHERE yazmazsanız tablodaki TÜM kitaplar silinir (Büyük Mantık Hatası!).
+#     """
+#     silinecek_kitap = input("Silmek istediğiniz kitabın adı: ")
+
+#     # DELETE FROM tablo WHERE şart
+#     kitap.execute(
+#         "DELETE FROM kitaplar WHERE kitap_adi = ?", (silinecek_kitap,)
+#     )
+#     con.commit()  # Silme işlemini kaydet
+#     print(f"'{silinecek_kitap}' isimli kitap başarıyla silindi.")
+
+
+
 
 
 def inner_join_ornek():

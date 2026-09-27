@@ -26,7 +26,7 @@
 # firin_=deque()
 # firin_.append("adnan")
 # firin_.append("kara")
-# firin_.append("tiko")
+# firin_.append("tiko")     FIFO
 # for i in range(0,2):              DEqUE
 #     print(firin_)
 #     firin_.popleft()
@@ -167,11 +167,24 @@
 # sayilar=[5,2,8,1,9]
 # listeyi_dondur(sayilar)
     
-from collections import deque
-liste=deque()
-liste.append(16)
-liste.append(19)
-liste.append(1)
-print(liste)
-son_sil=liste.popleft()
-print("-",son_sil,liste)
+# from collections import deque
+# liste=deque()
+# liste.append(16)
+# liste.append(19)
+# liste.append(1)
+# print(liste)
+# son_sil=liste.popleft()
+# print("-",son_sil,liste)
+
+
+# Quick Sort Örneği
+def quick_sort(dizi):
+    if len(dizi) <= 1:
+        return dizi
+    pivot = dizi[len(dizi) // 2]
+    sol = [x for x in dizi if x < pivot]
+    orta = [x for x in dizi if x == pivot]
+    sag = [x for x in dizi if x > pivot]
+    return quick_sort(sol) + orta + quick_sort(sag)
+
+print("\n\nSıralı Dizi (Quick Sort):", quick_sort([3, 6, 8, 10, 1, 2, 1]))
